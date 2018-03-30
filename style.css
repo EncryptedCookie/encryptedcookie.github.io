@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato";
+    src: url("fonts/Lato/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url("fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+}
+body {
+    margin: 0;
+}
+/* Navigation Bar */
+.navbar {
+    overflow: hidden;
+    background-color: #eaeaea;
+}
+
+.navbar a {
+    font-family: "Lato", sans-serif;
+    float: left;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 16px 15px 16px;
+}
+
+.navbar a:hover {
+    background-color: #cbcbcb;
+
+}
+
+.navbar a.active {
+    background-color: #1e90ff;
+    color: #fafafa;
+}
+/* Text Formatting */
+.welcome {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin: 175px 0 75px 0;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin: 50px 0 30px 0;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    margin: 0 35%;
+}
+
+.text-maze-game {
+    border: 2px solid;
+    margin: 50px auto;
+    width: 430px;
+    height: 300px;
+}
+
+.text-maze-source {
+    color: #b3b3b3;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+}
