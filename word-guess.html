@@ -11,6 +11,82 @@
         <a href="index.html">Home Page</a>
         <a class="active" href="word-guess.html">Word Guessing Game</a>
         <a href="text-maze.html">Text-Based Maze Game</a>
+        <a id="about" href="about.html">About</a>
     </div>
+    <!-- Intro -->
+    <h1>Word Guessing Game</h1>
+    <p>This is a simple word guessing game that was used in class to practice peer programming. To play, simply type a letter in the box below and press enter.</p>
+    <!-- Word Guessing Game Code -->
+
+    <div id="guess_display"></div>
+
+
+    <form id="guess_form">
+        <label>Guess a letter:
+            <input type="text" id="guess_input">
+        </label>
+    </form>
+
+    <div id="guess_status"></div>
+
+    <script>
+        // Store DOM elements in variables
+        var guessForm = document.getElementById("guess_form");
+        var guessDisplay = document.getElementById("guess_display");
+        var guessInput = document.getElementById("guess_input");
+        var guessStatus = document.getElementById("guess_status");
+
+        // Initialize game state variables
+        var secretWord = "decryptedcookie";
+        var guessedWord = [];
+        var guessedLetters = [];
+        for (var i = 0; i < secretWord.length; i++) {
+            guessedWord[i] = "_";
+        }
+
+        // Returns true if its a correct guess -
+        //  if the letter is anywhere in the word
+        // Also updates guessedWord and guessedLetters
+        var checkLetterGuess = function(letter) {
+            var foundLetter = false;
+            for (var i = 0; i < secretWord.length; i++) {
+                if (letter.toLowerCase() === secretWord[i]) {
+                    guessedWord[i] = letter.toLowerCase();
+                    foundLetter = true;
+                }
+                guessedLetters.push(letter);
+            };
+            return foundLetter;
+        };
+
+        // Returns true if they guessed the whole word
+        var hasWon = function() {
+            if (secretWord === guessedWord.join("")) {
+                return true;
+            }
+        };
+
+
+        var displayGuessedWord = function() {
+            guessDisplay.innerHTML = guessedWord.join(" ");
+        };
+
+
+        guessForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            var foundLetter = checkLetterGuess(guessInput.value);
+            if (foundLetter) {
+                guessStatus.innerHTML = "You guessed correctly!";
+            } else {
+                guessStatus.innerHTML = "Sorry, that one's wrong.";
+            }
+            if (hasWon()) {
+                guessStatus.innerHTML += " You guessed the word!";
+            }
+            displayGuessedWord();
+            guessInput.value = "";
+        });
+        displayGuessedWord();
+    </script>
 </body>
 </html>

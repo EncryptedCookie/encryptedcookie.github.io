@@ -44,6 +44,15 @@ body {
     margin: 175px 0 75px 0;
 }
 
+#about {
+    float: right;
+    background-color: #acacac;
+}
+
+#about:hover {
+    background-color: #8d8d8d;
+}
+
 h1 {
     font-family: "Montserrat", sans-serif;
     text-align: center;
@@ -66,5 +75,16 @@ p {
 .text-maze-source {
     color: #b3b3b3;
     font-family: "Lato", sans-serif;
+    text-align: center;
+}
+
+#guess_display {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin: 30px;
+}
+
+#guess_form, #guess_status {
+    font-family: "Open Sans", sans-serif;
     text-align: center;
 }
