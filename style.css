@@ -65,17 +65,20 @@ p {
     margin: 0 35%;
 }
 
-.text-maze-game {
+#text-maze-game {
     border: 2px solid;
-    margin: 50px auto;
+    margin: 50px auto 20px auto;
     width: 430px;
     height: 300px;
+}
+
+.source-container {
+    text-align: center;
 }
 
 .text-maze-source {
     color: #b3b3b3;
     font-family: "Lato", sans-serif;
-    text-align: center;
 }
 
 #guess_display {
