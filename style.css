@@ -65,11 +65,20 @@ p {
     margin: 0 35%;
 }
 
-#text-maze-game {
+#maze-game-border {
     border: 2px solid;
-    margin: 50px auto 20px auto;
-    width: 430px;
+    margin: 20px auto;
+    width: 300px;
     height: 300px;
+}
+
+#text-maze-game {
+    font-family: Arial, sans-serif;
+    transform: scale(1, 0.7);
+    border: 2px solid #c8c8c8;
+    width: 138px;
+    margin: 79px;
+    line-height: 23px;
 }
 
 .source-container {
