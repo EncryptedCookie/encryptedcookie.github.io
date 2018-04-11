@@ -25,7 +25,7 @@ var levelTwo={
 █ ░ ░ ░ █ ░ ░ ░ █ █ ░ █
 █ ░ █ ░ ░ ░ █ ░ ░ ░ ░ █
 █ █ █ █ █ █ █ █ █ █ █ █
-`.split("")],
+`.split()],
     "playerIndex":[52],
     "width":[48]
 };
@@ -44,7 +44,7 @@ var levelThree={
 █ ░ █ █ █ █ ░ █ █ █ █ ░ █
 █ ░ ░ ░ ░ ░ ░ ░ ░ █ ░ ░ █
 █ █ █ █ █ █ █ █ █ █ █ █ █
-`.split("")],
+`.split()],
     "playerIndex":[160],
     "width":[52]
 };

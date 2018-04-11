@@ -65,20 +65,24 @@ p {
     margin: 0 35%;
 }
 
-#maze-game-border {
-    border: 2px solid;
-    margin: 20px auto;
-    width: 300px;
-    height: 300px;
-}
-
-#text-maze-game {
-    font-family: Arial, sans-serif;
+.text-maze-game {
+    font-family: "Arial", sans-serif;
     transform: scale(1, 0.7);
     border: 2px solid #c8c8c8;
-    width: 138px;
-    margin: 79px;
+    width: 204px;
     line-height: 23px;
+    margin: auto;
+    padding: 2px 0 2px 3px;
+}
+
+.enter-to-start {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    transform: scale(1, 1);
+    width: 100%;
+    border: 0;
+    margin: 40px auto;
+    text-align: center;
 }
 
 .source-container {
