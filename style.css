@@ -37,6 +37,7 @@ body {
     background-color: #1e90ff;
     color: #fafafa;
 }
+
 /* Text Formatting */
 .welcome {
     font-family: "Montserrat", sans-serif;
@@ -51,6 +52,16 @@ body {
 
 #about:hover {
     background-color: #8d8d8d;
+}
+
+#about.active {
+    background-color: #84bdf4;
+    color: #fafafa;
+}
+
+#about.active:hover {
+    background-color: #84bdf4;
+    color: #fafafa;
 }
 
 h1 {
@@ -79,7 +90,6 @@ p {
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
     transform: scale(1, 1);
-    width: 100%;
     border: 0;
     margin: 40px auto;
     text-align: center;
