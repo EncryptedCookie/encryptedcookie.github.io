@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EncryptedCookie's School Site</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="maze.js" charset="utf-8"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">Home Page</a>
+        <a href="word-guess.html">Word Guessing Game</a>
+        <a class="active" href="unicode-maze.html">Unicode Maze Game</a>
+        <a id="about" href="about.html">About</a>
+    </div>
+    <!-- Page -->
+    <h1>Unicode Maze Game</h1>
+    <p>This is the a simple maze game that is made out of unicode characters. The one playable here is written in JavaScript because it made implementing it into a webpage much easier.
+    However, the original version is written in Python because it's what I was learning at the time.<br>Also, this has only been tested to work on Chrome on Windows 7. Other browsers may render the unicode differently and make this unplayable.</p>
+    <div class="unicode-maze-game enter-to-start"></div>
+    <div class="win-message">You Win!</div>
+    <script>
+        var game_screen = $('.unicode-maze-game.enter-to-start');
+        var win_screen = $('.win-message');
+
+        function get_goal() {
+            if (currentMaze.number !== 3) {
+                currentMaze.number += 1;
+                import_Maze(currentMaze.number);
+                if (currentMaze.number === 2) {
+                    game_screen.css("width", "232px");
+                } else if (currentMaze.number === 3) {
+                    game_screen.css("width", "253px");
+                }
+            } else if (currentMaze.number === 3) {
+                win_screen.css("visibility", "visible");
+                win_screen.css("transform", "translateY(-50px)");
+                return true;
+            }
+        }
+
+        game_screen.html('Arrow Keys to Move, Press Enter to Start');
+            $(document).keydown(function (e) {
+                if (e.which === 13) { // Enter
+                    game_screen.removeClass('enter-to-start');
+                    import_Maze(1);
+                    game_screen.html(currentMaze.level);
+                }
+                if (e.which === 37) {
+                    move_player("left");
+                    game_screen.html(currentMaze.level);
+                }
+                if (e.which === 38) {
+                    move_player("up");
+                    game_screen.html(currentMaze.level);
+                }
+                if (e.which === 39) {
+                    move_player("right");
+                    game_screen.html(currentMaze.level);
+                }
+                if (e.which === 40) {
+                    move_player("down");
+                    game_screen.html(currentMaze.level);
+                }
+            });
+
+    </script>
+    <div class="source-container">
+        <a href="https://github.com/EncryptedCookie/PythonMaze" class="unicode-maze-source">Source Code on Github</a>
+    </div>
+</body>
+</html>

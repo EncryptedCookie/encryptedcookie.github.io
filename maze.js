@@ -1,39 +1,39 @@
 var levelOne={
-    "level":[`█ █ █ █ █ █ █ █ █
-█ ▓ █ ░ ░ ░ ░ ▒ █
+    "level":`█ █ █ █ █ █ █ █ █
+█ ▓ ░ ░ ░ ░ ░ ▒ █
 █ ░ █ ░ █ █ █ █ █
 █ ░ █ ░ ░ ░ ░ ░ █
 █ ░ █ █ █ █ █ ░ █
 █ ░ █ ░ ░ ░ █ ░ █
 █ ░ █ ░ █ ░ █ ░ █
 █ ░ ░ ░ █ ░ ░ ░ █
-█ █ █ █ █ █ █ █ █`.split()],
-    "playerIndex":[40],
-    "width":[36]
+█ █ █ █ █ █ █ █ █`.split(''),
+    "playerIndex":20,
+    "width":18
 };
 
 var levelTwo={
-    "level":[`█ █ █ █ █ █ █ █ █ █ █ █
+    "level":`█ █ █ █ █ █ █ █ █ █ █ █
 █ ▓ ░ ░ ░ ░ █ ░ ░ ░ ░ █
 █ █ █ █ █ ░ █ ░ █ █ ░ █
 █ ░ ░ ░ ░ ░ █ █ █ ░ ░ █
 █ ░ █ █ █ ░ █ ░ ░ ░ ░ █
-█ ░ ░ █ ░ ░ █ ░ █ █ ░ █
+█ ░ ░ █ ░ ░ ░ ░ █ █ ░ █
 █ █ ░ █ ░ █ █ ▒ █ ░ ░ █
 █ ░ ░ █ ░ ░ █ █ █ ░ █ █
 █ ░ █ █ █ █ █ ░ █ ░ ░ █
 █ ░ ░ ░ █ ░ ░ ░ █ █ ░ █
 █ ░ █ ░ ░ ░ █ ░ ░ ░ ░ █
 █ █ █ █ █ █ █ █ █ █ █ █
-`.split()],
-    "playerIndex":[52],
-    "width":[48]
+`.split(''),
+    "playerIndex":26,
+    "width":24
 };
 
 var levelThree={
-    "level":[`█ █ █ █ █ █ █ █ █ █ █ █ █
+    "level":`█ █ █ █ █ █ █ █ █ █ █ █ █
 █ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ █
-█ ░ █ █ █ █ █ █ █ █ █ ░ █
+█ ░ █ █ █ █ ░ █ █ █ █ ░ █
 █ ▓ █ ░ ░ ░ ░ ░ ░ ░ █ ░ █
 █ █ █ ░ █ █ ░ █ █ █ █ ░ █
 █ ░ ░ ░ █ ░ ░ ░ █ ░ █ ░ █
@@ -44,16 +44,16 @@ var levelThree={
 █ ░ █ █ █ █ ░ █ █ █ █ ░ █
 █ ░ ░ ░ ░ ░ ░ ░ ░ █ ░ ░ █
 █ █ █ █ █ █ █ █ █ █ █ █ █
-`.split()],
-    "playerIndex":[160],
-    "width":[52]
+`.split(''),
+    "playerIndex":80,
+    "width":26
 };
 
 var currentMaze={
-    "level":[""],
-    "playerIndex":[0],
-    "width":[0],
-    "number":[1]
+    "level":"",
+    "playerIndex":0,
+    "width":0,
+    "number":1
 };
 
 function import_Maze(mazeNumber) {
@@ -76,22 +76,61 @@ function import_Maze(mazeNumber) {
     }
 }
 
-function get_goal() {
-    if (currentMaze.number !== 3) {
-        currentMaze.number += 1;
-        import_Maze(currentMaze.number);
-    }
-    else if (currentMaze.number === 3) {
-        console.log("You win!") //       /!\ Change this later to add "You win!" to the page itself and stops the script //
-    }
-}
-
 function move_player(direction) {
-    /*if (direction === "up" && currentMaze.level.slice(currentMaze.playerIndex-currentMaze.width, currentMaze.playerIndex-currentMaze.width+1)===["░"]) {
-        currentMaze.level.slice(currentMaze.playerIndex-currentMaze.width, currentMaze.playerIndex-currentMaze.width+1)=["▓"];
-        currentMaze.level.slice(currentMaze.playerIndex, currentMaze.playerIndex+1)=["░"];
-    else*/ if (direction === "down" && currentMaze.level.slice(currentMaze.playerIndex+currentMaze.width, currentMaze.playerIndex+currentMaze.width+1)===["░"]) {
-        currentMaze.level.slice(currentMaze.playerIndex+currentMaze.width, currentMaze.playerIndex+currentMaze.width+1)=["▓"];
-        currentMaze.level.slice(currentMaze.playerIndex, currentMaze.playerIndex+1)=["░"];
+    if (direction === "up" && currentMaze.level[currentMaze.playerIndex-currentMaze.width]==="░") {
+        currentMaze.level[currentMaze.playerIndex - currentMaze.width] = "▓";
+        currentMaze.level[currentMaze.playerIndex] = "░";
+        currentMaze.playerIndex -= currentMaze.width;
+        return currentMaze.level.join('');
+    }
+    else if (direction === "up" && currentMaze.level[currentMaze.playerIndex-currentMaze.width]==="▒") {
+        if (get_goal() ===  true) {
+            currentMaze.level[currentMaze.playerIndex - currentMaze.width] = "▓";
+            currentMaze.level[currentMaze.playerIndex] = "░";
+            currentMaze.playerIndex=0;
+            return currentMaze.level.join('');
+        }
+    }
+    if (direction === "down" && currentMaze.level[currentMaze.playerIndex+currentMaze.width]==="░") {
+        currentMaze.level[currentMaze.playerIndex+currentMaze.width]="▓";
+        currentMaze.level[currentMaze.playerIndex]="░";
+        currentMaze.playerIndex += currentMaze.width;
+
+    }
+    else if (direction === "down" && currentMaze.level[currentMaze.playerIndex+currentMaze.width]==="▒") {
+        if (get_goal() ===  true) {
+            currentMaze.level[currentMaze.playerIndex+currentMaze.width]="▓";
+            currentMaze.level[currentMaze.playerIndex]="░";
+            currentMaze.playerIndex=0;
+            return currentMaze.level.join('');
+        }
+    }
+    if (direction === "left" && currentMaze.level[currentMaze.playerIndex-2]==="░") {
+        currentMaze.level[currentMaze.playerIndex-2]="▓";
+        currentMaze.level[currentMaze.playerIndex]="░";
+        currentMaze.playerIndex -= 2;
+        return currentMaze.level.join('');
+    }
+    else if (direction === "left" && currentMaze.level[currentMaze.playerIndex-2]==="▒") {
+        if (get_goal() ===  true) {
+            currentMaze.level[currentMaze.playerIndex-2]="▓";
+            currentMaze.level[currentMaze.playerIndex]="░";
+            currentMaze.playerIndex=0;
+            return currentMaze.level.join('');
+        }
+    }
+    if (direction === "right" && currentMaze.level[currentMaze.playerIndex+2]==="░") {
+        currentMaze.level[currentMaze.playerIndex+2]="▓";
+        currentMaze.level[currentMaze.playerIndex]="░";
+        currentMaze.playerIndex += 2;
+        return currentMaze.level.join('');
+    }
+    else if (direction === "right" && currentMaze.level[currentMaze.playerIndex+2]==="▒") {
+        if (get_goal() ===  true) {
+            currentMaze.level[currentMaze.playerIndex+2]="▓";
+            currentMaze.level[currentMaze.playerIndex]="░";
+            currentMaze.playerIndex=0;
+            return currentMaze.level.join('');
+        }
     }
 }

@@ -3,6 +3,10 @@
     src: url("fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
 }
 @font-face {
+    font-family: "Montserrat-Bold";
+    src: url("fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+}
+@font-face {
     font-family: "Lato";
     src: url("fonts/Lato/Lato-Regular.ttf") format("truetype");
 }
@@ -10,6 +14,12 @@
     font-family: "Open Sans";
     src: url("fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
 }
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
 }
@@ -72,16 +82,16 @@ h1 {
 
 p {
     font-family: "Open Sans", sans-serif;
-    text-align: center;
+    text-align: justify;
     margin: 0 35%;
 }
 
-.text-maze-game {
-    font-family: "Arial", sans-serif;
-    transform: scale(1, 0.7);
-    border: 2px solid #c8c8c8;
-    width: 204px;
-    line-height: 23px;
+.unicode-maze-game {
+    font-family: sans-serif;
+    font-size: 20px;
+    transform: scale(1, 0.625);
+    width: 180px;
+    line-height: 32px;
     margin: auto;
     padding: 2px 0 2px 3px;
 }
@@ -89,17 +99,27 @@ p {
 .enter-to-start {
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
+    line-height: 24px;
     transform: scale(1, 1);
-    border: 0;
     margin: 40px auto;
     text-align: center;
+    width: 200px;
+}
+
+.win-message {
+    font-family: "Montserrat-SemiBold", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    margin: auto;
+    text-align: center;
+    visibility: hidden;
 }
 
 .source-container {
     text-align: center;
 }
 
-.text-maze-source {
+.unicode-maze-source {
     color: #b3b3b3;
     font-family: "Lato", sans-serif;
 }
