@@ -134,3 +134,18 @@ p {
     font-family: "Open Sans", sans-serif;
     text-align: center;
 }
+
+.ttt {
+    text-align: center;
+}
+
+#board, #status {
+    margin-top: 40px;
+    font-family: monospace;
+    text-align: center;
+}
+
+#board td {
+    width: 30px;
+    height: 30px;
+}
