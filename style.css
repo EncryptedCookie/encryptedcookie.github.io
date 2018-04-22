@@ -3,7 +3,7 @@
     src: url("fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
 }
 @font-face {
-    font-family: "Montserrat-Bold";
+    font-family: "Montserrat-SemiBold";
     src: url("fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
 }
 @font-face {
@@ -141,11 +141,40 @@ p {
 
 #board, #status {
     margin-top: 40px;
-    font-family: monospace;
     text-align: center;
 }
 
 #board td {
+    font-family: monospace;
     width: 30px;
     height: 30px;
+}
+
+#status{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+}
+
+.lib-container {
+    width: 100%;
+    text-align: center;
+}
+
+#lib-form {
+    display: inline-block;
+    margin-top: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+#submit {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    border: 1px solid #a9a9a9;
+    margin: 20px 0;
+}
+
+#story {
+    font-family: "Open Sans", sans-serif;
+    text-align: justify;
+    margin: 0 30%;
 }

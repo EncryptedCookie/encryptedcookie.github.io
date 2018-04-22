@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EncryptedCookie's School Site</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<>
+<!-- Navigation Bar -->
+<div class="navbar">
+    <a href="index.html">Home Page</a>
+    <a href="word-guess.html">Word Guessing Game</a>
+    <a href="unicode-maze.html">Unicode Maze Game</a>
+    <a href="tic-tac-toe.html">JS Tic-Tac-Toe</a>
+    <a class="active" href="mad-libs.html">Mad Libs</a>
+    <a id="about" href="about.html">About</a>
+</div>
+<!-- Content -->
+<h1>Mad Libs</h1>
+<p>Fill in the blanks with a word with the specified type, then click "Generate" to create a story with them.</p>
+<div class="lib-container">
+<form id="lib-form">
+    <label>
+        Adjective: <input type="text" id="adjective1">
+    </label>
+    <br/>
+    <label>
+        Adjective: <input type="text" id="adjective2">
+    </label>
+    <br/>
+    <label>
+        Noun: <input type="text" id="noun1">
+    </label>
+    <br/>
+    <label>
+        Noun: <input type="text" id="noun2">
+    </label>
+    <br/>
+    <label>
+        Plural Noun: <input type="text" id="plural_noun1">
+    </label>
+    <br/>
+    <label>
+        Game: <input type="text" id="game">
+    </label>
+    <br/>
+    <label>
+        Plural Noun: <input type="text" id="plural_noun2">
+    </label>
+    <br/>
+    <label>
+        Verb Ending in "ing": <input type="text" id="verb_ing1">
+    </label>
+    <br/>
+    <label>
+        Verb Ending in "ing": <input type="text" id="verb_ing2">
+    </label>
+    <br/>
+    <label>
+        Plural Noun: <input type="text" id="plural_noun3">
+    </label>
+    <br/>
+    <label>
+    Verb Ending in "ing": <input type="text" id="verb_ing3">
+    </label>
+    <br/>
+    <label>
+        Noun: <input type="text" id="noun3">
+    </label>
+    <br/>
+    <label>
+        Plant: <input type="text" id="plant">
+    </label>
+    <br/>
+    <label>
+        Part of the Body: <input type="text" id="body_part">
+    </label>
+    <br/>
+    <label>
+        A Place: <input type="text" id="place">
+    </label>
+    <br/>
+    <label>
+        Verb Ending in "ing": <input type="text" id="verb_ing4">
+    </label>
+    <br/>
+    <label>
+        Adjective: <input type="text" id="adjective3">
+    </label>
+    <br/>
+    <label>
+        Number: <input type="text" id="number">
+    </label>
+    <br/>
+    <label>
+        Plural Noun: <input type="text" id="plural_noun4">
+    </label>
+    <br/>
+
+    <button id="submit" type="submit">Generate!</button>
+</form>
+</div>
+<div id="story"></div>
+
+<script>
+    window.onload = function () {
+        var libForm = document.getElementById("lib-form");
+        libForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var adjective1 = document.getElementById("adjective1").value;
+            var adjective2 = document.getElementById("adjective2").value;
+            var noun1 = document.getElementById("noun1").value;
+            var noun2 = document.getElementById("noun2").value;
+            var plural_noun1 = document.getElementById("plural_noun1").value;
+            var game = document.getElementById("game").value;
+            var plural_noun2 = document.getElementById("plural_noun2").value;
+            var verb_ing1 = document.getElementById("verb_ing1").value;
+            var verb_ing2 = document.getElementById("verb_ing2").value;
+            var plural_noun3 = document.getElementById("plural_noun3").value;
+            var verb_ing3 = document.getElementById("verb_ing3").value;
+            var noun3 = document.getElementById("noun3").value;
+            var plant = document.getElementById("plant").value;
+            var body_part = document.getElementById("body_part").value;
+            var place = document.getElementById("place").value;
+            var verb_ing4 = document.getElementById("verb_ing4").value;
+            var adjective3 = document.getElementById("adjective3").value;
+            var number = document.getElementById("number").value;
+            var plural_noun4 = document.getElementById("plural_noun4").value;
+
+
+            var storyDiv = document.getElementById("story");
+            storyDiv.innerHTML = "A vacation is when you take a trip to some " + adjective1 + " place\
+        with your " + adjective2 + " family. Usually you go to some place\
+        that is near a/an " + noun1 + " or up on a/an " + noun2 + ".\
+            A good vacation place is one where you can ride " + plural_noun1 + "\
+        or play " + game + " or go hunting for " + plural_noun2 + ". I like\
+        to spend my time " + verb_ing1 + " or " + verb_ing2 + ".\
+            When parents go on a vacation, they spend their time eating\
+        three " + plural_noun3 + " a day, and fathers play golf, and mothers\
+        sit around " + verb_ing3 + ". Last summer, my little brother\
+        fell in a/an " + noun3 + " and got poison " + plant + " all\
+        over his " + body_part + ". My family is going to go to (the) " +
+                place + ", and I will practice " + verb_ing4 + ". Parents\
+        need vacations more than kids because parents are always very " +
+                adjective3 + " and because they have to work " + number + "\
+        hours every day all year making enough " + plural_noun4 + " to pay\
+        for the vacation.";
+
+        });
+    }
+</script>
+
+</body>
+</html>
