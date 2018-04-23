@@ -119,7 +119,7 @@ p {
     text-align: center;
 }
 
-.unicode-maze-source {
+.unicode-maze-source, .mad-libs-source {
     color: #b3b3b3;
     font-family: "Lato", sans-serif;
 }
